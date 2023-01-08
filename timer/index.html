@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+<html>
+  <head>
+    <title>タイマー</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+    <style>
+        *,
+        *:before,
+        *:after {
+          -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+        }
+
+        html {
+        font-family: "M PLUS Rounded 1c" ;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        font-size: 62.5%;
+        }
+
+        #title {
+        text-align: center;
+        padding: 1rem 2rem;
+        border: 3px solid #000;
+        }
+
+        #time-input {
+        margin: 0 auto;
+        text-align: center;
+
+        align-items: center;
+        width: 350px;
+        padding: 5px 8px;
+        border-radius: 6px;
+        border-top: 1px solid #aaa;
+        border-left: 1px solid #aaa;
+        border-right: 2px solid #aaa;
+        border-bottom: 2px solid #aaa;
+        background-image: none;
+        background-color: #ddd;
+        font-size: 16px;
+        
+        }
+        .btn,/*丸ごとコピペ(得)*/
+        a.btn,
+        button.btn {
+          font-size: 1.6rem;
+          font-weight: 700;
+          line-height: 1.5;
+          position: relative;
+          display: inline-block;
+          padding: 1rem 4rem;
+          cursor: pointer;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          -webkit-transition: all 0.3s;
+          transition: all 0.3s;
+          text-align: center;
+          vertical-align: middle;
+          text-decoration: none;
+          letter-spacing: 0.1em;
+          color: #212529;
+          border-radius: 0.5rem;
+        }
+
+        a.btn-border {
+          border: 2px solid #000;
+          border-radius: 0;
+          background: #fff;
+        }
+
+        a.btn-border:hover {
+          color: #fff;
+          background: #000;
+        }
+
+        #time-input > label {
+        margin-right: 10px;
+        }
+
+        #time-input > input {
+        width: 50px;
+        }
+
+        #start-button,
+        #stop-button {
+        margin-left: 20px;
+        }
+
+        #timer {
+        margin-top: 20px;
+        font-size: 5rem;
+        font-weight: bold;
+        }
+    </style>
+  </head>
+  <body style="text-align: center;">
+    <h1 id="title">タイマー</h1>
+    <div id="time-input">
+      <input id="hours" type="number" value="0" placeholder="時間を入力"/>
+      <label for="hours">時間</label>
+      <input id="minutes" type="number" value="0" placeholder="分を入力"/>
+      <label for="minutes">分</label>
+      <input id="seconds" type="number" value="0" placeholder="秒を入力"/>
+      <label for="seconds">秒</label>
+    </div>
+    <br>
+    <div>
+      <a class="btn btn-border" id="start-button">開始</a>
+      <a class="btn btn-border" id="start-button">停止</a>
+    </div>
+    <!--
+    <button id="start-button">開始</button>
+    <button id="stop-button">停止</button>
+    -->
+    <br>
+    <div id="setbutton">
+      <button id="1h" onclick="insert1h()">1時間</button>
+      <button id="30m" onclick="insert30m()">30分</button>
+      <button id="5m" onclick="insert5m()">5分</button>
+      <button id="3m" onclick="insert3m()">3分</button>
+    </div>
+    <p id="timer"></p>
+    <audio id="sound">
+      <source src="aralm.mp3" type="audio/mpeg">
+    </audio>
+    <script src="timer.js"></script>
+  </body>
+</html>
